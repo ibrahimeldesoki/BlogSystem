@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-    protected $fillable = 
-    [
+    
+    protected $fillable = [
         'content'
     ];
+
+    //relationships
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

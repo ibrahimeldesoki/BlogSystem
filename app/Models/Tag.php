@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
-    protected $fillable =
-    [
+
+    protected $fillable =[
         'name'
     ];
+
+    // relationships
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

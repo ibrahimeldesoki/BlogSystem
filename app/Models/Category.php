@@ -12,4 +12,11 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    //relationships
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
